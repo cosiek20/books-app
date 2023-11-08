@@ -26,14 +26,21 @@ function initActions(){
 
     booksList.addEventListener('dblclick', function(event){
       event.preventDefault();
-      console.log(favoriteBooks);
-      if(event.target.offsetParent.classList.contains('.book__image')){
-        console.log(favoriteBooks);
-        for (const image of favoriteBooks) {
+
+      const image = event.target.offsetParent;
+      console.log(image);
+    
+      if(event.target.offsetParent.classList.contains('book__image') == true){
+
+        console.log(image)
+
+
+
+
+        
           if(image.classList.contains('favorite') == false) {
             image.classList.add('favorite');
             
-
             const imageId = image.getAttribute('data-id');
             favoriteBooks.push(imageId);
             console.log(favoriteBooks);
@@ -45,7 +52,6 @@ function initActions(){
             favoriteBooks.splice(indexOfimageId, 1);
             console.log(favoriteBooks);
           }
-        }
       }
     });
   
